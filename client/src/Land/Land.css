@@ -1,0 +1,39 @@
+body{
+    /* background-image: url("../assets/images.jpeg"); */
+    background-size: cover;
+}
+.nav_bar
+{
+    height: 5em;
+    width: auto;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: -5px;
+    margin-left: -5px;
+    position: sticky;
+    top: 0px;
+    
+}
+.logo
+{
+    
+    width: auto;
+    /* background-color: black; */
+}
+.items
+{
+
+    display: flex;
+    justify-content: space-between;
+    width:350px;
+    align-items: center;
+    /* background-color: black; */
+    
+}
+.items .item{
+    cursor: pointer;
+    list-style: none;
+}
+
