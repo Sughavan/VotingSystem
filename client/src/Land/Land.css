@@ -1,26 +1,48 @@
 body{
     /* background-image: url("../assets/images.jpeg"); */
     background-size: cover;
+    
+   
 }
 .nav_bar
 {
     height: 5em;
     width: auto;
-    background-color: aquamarine;
+    background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: space-between;
 
-    margin-top: -5px;
-    margin-left: -5px;
+    /* margin-top: -5px;
+    margin-left: -5px; */
     position: sticky;
     top: 0px;
     
 }
+.color
+{
+    /* font-family: monospace; */
+    font-weight:900;
+    color:rgb(15, 70, 160);
+}
 .logo
 {
-    
-    width: auto;
+    /* font-family: monospace; */
+    letter-spacing: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    border-right: 0px solid;
     /* background-color: black; */
+    animation: typing 3s ,cursor .4s step-end infinite alternate;
+    
+}
+@keyframes typing
+{
+    from{width: 0px;}
+}
+@keyframes cursor 
+{
+    
 }
 .items
 {
@@ -29,6 +51,7 @@ body{
     justify-content: space-between;
     width:350px;
     align-items: center;
+    translate: -50px;
     /* background-color: black; */
     
 }
@@ -36,4 +59,194 @@ body{
     cursor: pointer;
     list-style: none;
 }
+.ite
+{
+    font-size: 18px;
+    font-family:cursive;
+    font-style:oblique;
+    font-weight:bolder;
+    letter-spacing: 1px;
+   
+    text-decoration: none;
+    color: rgb(0, 0, 255);
+    
+}
 
+
+.img
+{
+    width: 50px;
+    height:50px;
+    opacity: 1;
+    background:linear-gradient(rgb(155, 155, 255),rgb(63, 63, 63));
+    border-radius: 25px;
+    /* margin-right: 80px; */
+}
+.hero
+{
+    width: auto;
+    height:70vh;
+    background-color: black;
+}
+.live
+{
+    margin-top: 50px;
+    width: 700px;
+    height:450px;
+    background-color: rgb(255, 255, 255);
+    /* translate: 400px; */
+    border-radius: 30px;
+    margin-left :400px;
+}
+
+.para
+{
+    /* color: white; */
+    width: 450px;
+    /* margin-left: 20px; */
+   margin: 20px;
+  
+   
+}
+
+.nee
+{
+    /* color: white; */
+    text-align: center;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    animation: typing 10s ,cursor .4s step-end infinite alternate; 
+    /* background-color: black; */
+}
+.what
+{
+    display: flex;
+   
+   margin-left: 75px;
+    margin-top: 50px;
+    width: 500px;
+    height: fit-content;
+    /* background-color: black; */
+    align-items: center;
+    text-align: justify;
+    background-color: rgb(255, 255, 255);
+    border-radius:30px;
+    /* box-shadow: 5px 5px 25px grey; */
+    
+}
+.elec
+{
+    /* display: inline; */
+    width: 350px;
+    height:300px;
+    /* box-shadow: 5px 5px 25px grey; */
+    margin-left: 350px;
+   
+}
+.elect
+{
+    
+    margin-top:50px ;
+    margin-left: 100px;
+    width: 350px;
+    height:300px;
+   
+}
+
+.no 
+{
+    display: inline;
+    position: static;
+    left: 75px;
+    width: fit-content;
+    /* background-color: black; */
+}
+.need
+{
+    display: flex;
+   
+    margin-top: 50px;
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    text-align: justify;
+    background-color: rgb(255, 252, 252);
+    /* margin-left: 900px; */
+    border-radius:30px;
+    /* box-shadow: 5px 5px 25px grey; */
+}
+.need .con
+{
+    width: 500px;
+    height: fit-content;
+    border-radius:30px;
+    /* box-shadow: 5px 5px 25px grey; */
+    margin-left: 400px;
+}
+
+.fing
+{
+    background-color: rgb(255, 255, 255);
+    width:100% ;
+    height: 100%;
+    opacity:1 ; 
+    cursor: pointer;
+    animation: upward 1s  ,blank 1s infinite alternate;
+
+}
+@keyframes upward {
+    from{height: 500px;
+   }
+    
+    
+}
+@keyframes blank {
+    from{height: 500px;}
+    
+}
+
+.upcoming_election
+{
+    margin-top:50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.upcome
+{
+    width: 300px;
+    height:500px;
+    background-color:grey;
+    border-radius: 15px;
+    text-align: center;
+    /* align-content: center ; */
+    
+}
+.blan 
+{
+    /* background-color: black; */
+    text-align:center;
+    justify-content: center;
+}
+.blank
+{
+      width: 200px;
+      height:200px;
+    transition: 0.2s;
+
+}
+.blank:hover
+{
+    padding: 20px;
+   zoom: 110%;
+   
+   cursor: pointer;
+ 
+}
+.Cand
+{
+    text-align: center;
+    color: rgb(8, 8, 121);
+}
