@@ -1,0 +1,32 @@
+.slider-container {
+    width: 100%;
+    overflow: visible;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    width: 400%;
+    animation: scroll 10s linear infinite;
+}
+
+.slide {
+    width: 25%;
+    flex-shrink: 0;
+    animation: scroll 10s linear infinite;
+}
+
+.slide img {
+    width: 100%;
+    display: block;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(15%); }
+    
+    100% { transform: translateX(-100%); }
+}
+img{
+    width: auto;
+    height:70vh;
+}

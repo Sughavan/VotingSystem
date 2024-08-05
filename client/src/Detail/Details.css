@@ -13,7 +13,7 @@
     /* background-color: rgb(0, 0, 0); */
     
 }
-form
+.fom
 {
     height:fit-content;
     width: 525px;
@@ -30,7 +30,7 @@ form:hover
   box-shadow: 0px 0px 25px rgb(119, 119, 119);
 
 }
-input
+.las
 {
     width: auto;
     height: 20px;

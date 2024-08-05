@@ -8,6 +8,11 @@ import './Land.css'
 
 import Clock from '../clock/clock'
 import { useNavigate } from 'react-router-dom'
+import ImageSlider from '../Hero/ImageSlider'
+
+
+
+
 function Land(){
     const navi=useNavigate();
     const handleclick=()=>
@@ -51,7 +56,7 @@ function Land(){
 
         <div className='hero'>
 
-
+            <ImageSlider/>
         </div>
 
 
