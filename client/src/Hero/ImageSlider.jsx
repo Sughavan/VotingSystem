@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import './ImageSlider.css';
-import image1 from '../Images/vote1.jpeg'
-import image2 from '../Images/vote 2.jpeg'
-import image3 from '../Images/vote3.jpeg'
+import image1 from '../Images/vote1.jpeg';
+import image2 from '../Images/vote 2.jpeg';
+import image3 from '../Images/vote3.jpeg';
 
 const ImageSlider = () => {
     const sliderRef = useRef(null);
@@ -30,7 +30,6 @@ const ImageSlider = () => {
                 <div className="slide"><img src={image1} alt="Image 1" /></div>
                 <div className="slide"><img src={image2} alt="Image 2" /></div>
                 <div className="slide"><img src={image3} alt="Image 3" /></div>
-                <div className="slide"><img src={image3} /></div>
             </div>
         </div>
     );

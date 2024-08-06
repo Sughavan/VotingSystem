@@ -1,63 +1,85 @@
-import React from 'react'
-import './Details.css'
-import Clock from '../clock/clock'
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Details.css';
+
 const Details = () => {
-  const navigate=useNavigate();
-        const handle1=()=>
-        {
-                navigate('/Vote');
-        }
+  const [formData, setFormData] = useState({
+    firstName: '',
+    middleName: '',
+    lastName: '',
+    dob: '',
+    address: '',
+    phoneNumber: '',
+    aadhar: '',
+    voterId: ''
+  });
+
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Check if all required fields are filled
+    const isValid = Object.values(formData).every(value => value.trim() !== '');
+    setIsFormValid(isValid);
+  }, [formData]);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isFormValid) {
+      navigate('/Vote', { state: formData });
+    }
+  };
+
   return (
     <div className='form'>
       <h1>Details</h1>
-        <form action="" className='fom'>
-         
-            <label>First Name </label>
-            <input type="text" className='fir'/>
-<br></br>
-            <label>Middle Name </label>
-            <input type="text" className='mid'/>
-            <br></br>
+      <form onSubmit={handleSubmit} className='form-container'>
+        <label htmlFor="firstName" className='label'>First Name</label>
+        <input type="text" id="firstName" name="firstName" className='input' value={formData.firstName} onChange={handleChange} />
+        <br />
 
-            <label>Last Name </label>
-            <input type="text" className='las'/>
-         
+        <label htmlFor="middleName" className='label'>Middle Name</label>
+        <input type="text" id="middleName" name="middleName" className='input' value={formData.middleName} onChange={handleChange} />
+        <br />
 
-          <div className='dob'>
-            <label>Date of Birth </label>
-              <input type="date" name="" id="" className='las' />
-          </div>
+        <label htmlFor="lastName" className='label'>Last Name</label>
+        <input type="text" id="lastName" name="lastName" className='input' value={formData.lastName} onChange={handleChange} />
+        <br />
 
-          <div className='address'>
-            <label>Address </label>
-            <input type="text"  className='las'/>
-          </div>
+        <div className='dob'>
+          <label htmlFor="dob" className='label'>Date of Birth</label>
+          <input type="date" id="dob" name="dob" className='input' value={formData.dob} onChange={handleChange} />
+        </div>
 
-          
+        <div className='address'>
+          <label htmlFor="address" className='label'>Address</label>
+          <input type="text" id="address" name="address" className='input' value={formData.address} onChange={handleChange} />
+        </div>
 
-          <div className='phn-number'>
-            <label>Number</label>
-            <input type="text" className='las'/>
+        <div className='phone-number'>
+          <label htmlFor="phoneNumber" className='label'>Number</label>
+          <input type="tel" id="phoneNumber" name="phoneNumber" className='input' value={formData.phoneNumber} onChange={handleChange} />
+        </div>
 
-          </div>
+        <div className='aadhar'>
+          <label htmlFor="aadhar" className='label'>Aadhar number</label>
+          <input type="number" id="aadhar" name="aadhar" className='input' value={formData.aadhar} onChange={handleChange} inputMode="numeric" />
+        </div>
 
-          <div className='aadhar'>
-            <label>Aadhar number</label>
-            <input type="number" inputMode="numeric" className='las'/>
-          </div>
+        <div className='vote-id'>
+          <label htmlFor="voterId" className='label'>Voter's Id</label>
+          <input type="text" id="voterId" name="voterId" className='input' value={formData.voterId} onChange={handleChange} />
+        </div>
 
-          <div className='vote-id'>
-            <label>Voter's Id</label>
-            <input type="text" className='las'/>
-          </div>
-
-          <button type='' className='but' onClick={handle1}>submit</button>
-          
-        </form>
-          {/* <Clock/> */}
+        <button type='submit' className='button' disabled={!isFormValid}>Submit</button>
+      </form>
     </div>
-  )
-}
+  );
+};
 
-export default Details
+export default Details;

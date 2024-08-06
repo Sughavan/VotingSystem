@@ -1,104 +1,94 @@
-.form h1{
-    position: absolute;
-    top: 40px;
-    left: 670px;
-    font-weight:bolder;
-    color: rgb(0, 0, 0);
-    
-   
-}
-.form
-{
-    padding-top: 1px;
-    /* background-color: rgb(0, 0, 0); */
-    
-}
-.fom
-{
-    height:fit-content;
-    width: 525px;
-    background:linear-gradient(rgb(97, 144, 238) ,rgb(8, 108, 208));
+/* General Form Styles */
+.form {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     padding: 20px;
-    margin: 100px 450px;
-    border-radius: 25px;
-    
-}
-form:hover
-{
-    border: 0.1px solid rgb(174, 175, 177);
-  box-shadow: 0px 0px 25px rgb(119, 119, 119);
-
-}
-.las
-{
-    width: auto;
-    height: 20px;
-    margin-top: 30px;
-    margin-left: 0px;
-   
-    
-}
-label
-{
-    margin-left: 75px;
-}
-.fir
-{
-    margin-left: 63px;
-}
-.mid
-{
-    margin-left: 45px;
-}
-.las
-{
-    margin-left: 65px;
-}
-.dob input
-{
-    margin-left: 50px;
-}
-.address input{
-    margin-left: 80px;
-}
-.phn-number input
-{
-    margin-left: 85px;
-}
-.aadhar input
-{
-    margin-left: 30px;
-   
-}
-
-.vote-id input{
-    margin-left: 75px;
-}
-input:hover{
-  
-   
-   box-shadow: 0px 0px 25px rgb(0, 0, 0);
-
-}
-.but
-{
-    width: 100px;
-    height: 40px;
-    margin-top: 30px;
-    margin-left:200px ;
-    background-color: rgb(1, 41, 85);
-    border:none;
+    background-color: #f0f8ff; /* Alice Blue */
     border-radius: 10px;
-color: white;
-text-transform: capitalize;
- font-size: large;
-
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 50px auto;
 }
-.but:hover
-{
-    color: rgb(255, 255, 255);
-    text-shadow: 5px 5px 25px  rgb(255, 255, 255);
-    box-shadow: 5px 5px 25px white;
-    background-color: green;
+
+.form h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #2f4f4f; /* Dark Slate Gray */
+}
+
+/* Form Container */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Label Styles */
+.label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #4682b4; /* Steel Blue */
+}
+
+/* Input Styles */
+.input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #b0c4de; /* Light Steel Blue */
+    font-size: 16px;
+    margin-bottom: 15px;
+    width: calc(100% - 22px); /* Adjusting for padding and border */
+    background-color: #f5f5f5; /* White Smoke */
+}
+
+/* Date of Birth and Address Container */
+.dob, .address, .phone-number, .aadhar, .vote-id {
+    margin-bottom: 15px;
+}
+
+/* Button Styles */
+.button {
+    padding: 12px 20px;
+    background-color: #ff7f50; /* Coral */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+}
+
+.button:hover {
+    background-color: #ff6347; /* Tomato */
+}
+
+.button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form {
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    .form h1 {
+        font-size: 20px;
+    }
+
+    .label {
+        font-size: 14px;
+    }
+
+    .input {
+        font-size: 14px;
+    }
+
+    .button {
+        font-size: 14px;
+    }
 }
