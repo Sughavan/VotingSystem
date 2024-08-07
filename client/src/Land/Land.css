@@ -108,17 +108,28 @@ body {
   }
   
   .fing {
-    width: 200px; 
-    height: 200px;
+    width: 400px; 
+    height: 400px;
   }
   
-  .Cand {
-    text-align: center;
-    margin: 20px 0;
-    color: #000000;
-    font-size: 2cm;
+
+  .abou
+  {
+    height: 300px;
+    width: auto;
+    
   }
-  
+  .abo
+  {
+    color: #007bff;
+    font-size:200%;
+  }
+  .ab
+  {
+    text-align:justify;
+    font-weight: 900;
+    font-size: larger;
+  }
   .upcoming_election {
     display: flex;
     flex-wrap: wrap;
@@ -170,5 +181,36 @@ body {
   
   .text-slide-in-animation {
     animation: textSlideIn 3s infinite;
+  }
+  .footer {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    position: static;
+    width: 100%;
+    bottom: 0;
+  }
+  
+  .footer-links {
+    margin-bottom: 10px;
+  }
+  
+  .footer-link {
+    color: #9ca3af;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .footer-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+  
+  .footer-text {
+    margin: 0;
+    font-size: 14px;
+    color: #9ca3af;
   }
   

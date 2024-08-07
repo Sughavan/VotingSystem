@@ -19,6 +19,7 @@
     height: 80vh;
     display: block;
     object-fit: cover;
+    background-size: cover
 }
 
 @media (max-width: 768px) {

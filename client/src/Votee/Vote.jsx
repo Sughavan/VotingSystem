@@ -1,13 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import img from '../Images/symbol1.png'
-import img2 from '../Images/symbol2.jpeg'
+import axios from 'axios';
 import './Vote.css';
 
 const VotingPage = () => {
   const { state: voterDetails } = useLocation();
+  const [candidates, setCandidates] = useState([]);
   const [selectedCandidate, setSelectedCandidate] = useState('');
   const [voteConfirmed, setVoteConfirmed] = useState(false);
+
+  useEffect(() => {
+    const fetchCandidates = async () => {
+      try {
+        const response = await axios.get('https://retoolapi.dev/w5ywqM/data');
+        setCandidates(response.data);
+      } catch (error) {
+        console.error('Error fetching the candidates data', error);
+      }
+    };
+
+    fetchCandidates();
+  }, []);
 
   useEffect(() => {
     const voteStatus = localStorage.getItem(`voted-${voterDetails.voterId}`);
@@ -26,12 +39,6 @@ const VotingPage = () => {
       localStorage.setItem(`voted-${voterDetails.voterId}`, true);
     }
   };
-
-  const candidates = [
-    { id: '1', name: 'Candidate A', symbol: {img} },
-    { id: '2', name: 'Candidate B', symbol: {img2} },
-    { id: '3', name: 'Candidate C', symbol: {img2} }
-  ];
 
   return (
     <div className="voting-page">
@@ -54,13 +61,13 @@ const VotingPage = () => {
               type="radio" 
               id={candidate.id} 
               name="candidate" 
-              value={candidate.name} 
+              value={candidate.CandidateName} 
               onChange={handleVoteChange} 
               disabled={voteConfirmed}
             />
             <label htmlFor={candidate.id}>
-              <img src={candidate.symbol} alt={`${candidate.name} `} className="party-symbol" />
-              {/* {candidate.name} */}
+              <img src={candidate.symbol} alt="" className="party-symbol" />
+              {candidate.CandidateName}
             </label>
           </div>
         ))}

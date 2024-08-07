@@ -14,6 +14,9 @@ const Land = () => {
   const handleClick = () => {
     navigate('/details');
   };
+  const handleelectionk = () => {
+    navigate('/Election');
+  };
 
   return (
     <div id='home'>
@@ -24,13 +27,18 @@ const Land = () => {
         <ul className='items'>
           <li className='item'><a className='ite' href='#home'>Home</a></li>
           <li className='item'><a className='ite' onClick={handleClick}>VoteNow!</a></li>
-          <li className='item'><a className='ite'>Elections</a></li>
+          <li className='item'><a className='ite' onClick={handleelectionk}>Elections</a></li>
           <li className='item'><a className='ite'><img src={img1} alt='profile' className='img' /></a></li>
         </ul>
       </nav>
 
       <div className='hero'>
         <ImageSlider />
+      </div>
+      <div className='abou'>
+        <h1 className='abo'>About us</h1>
+        <p className='ab'>      At Vote Online, we are dedicated to empowering citizens of India by providing a secure, accessible, and transparent online voting system. Under the aegis of the Government of India, our platform ensures that every eligible voter can exercise their democratic right with ease and confidence. We strive to uphold the highest standards of integrity and security, making the voting process seamless and trustworthy. Our commitment is to foster a robust and inclusive electoral process, honoring the spirit of democracy and the voice of every citizen.</p>
+
       </div>
 
       <div className='body_section'>
@@ -62,27 +70,27 @@ const Land = () => {
           </div>
         </section>
 
-        <h1 className='Cand'>Candidates</h1>
-        <section className='upcoming_election'>
-          {Array(4).fill().map((_, index) => (
-            <div key={index} className='upcome'>
-              <div className='blan'>
-                <img src={blank} alt='blank' className='blank' />
-              </div>
-              <div className='det'>
-                <p>Name : ~</p>
-                <p>Party : ~</p>
-                <p>State : ~</p>
-                <p>Ward no: ~</p>
-                <p>Party Symbol</p>
-                <img src='#' alt='#' />
-              </div>
-            </div>
-          ))}
-        </section>
+        
+       
       </div>
 
-      <footer className='footer'></footer>
+      <footer className="footer">
+      <div className="footer-links">
+        <a href="https://eci.gov.in/" target="_blank" rel="noopener noreferrer" className="footer-link">
+          Election Commission of India
+        </a>
+        <a href="https://eci.gov.in/voter/" target="_blank" rel="noopener noreferrer" className="footer-link">
+          Voter Information
+        </a>
+        <a href="https://eci.gov.in/about/about-eci/" target="_blank" rel="noopener noreferrer" className="footer-link">
+          About ECI
+        </a>
+        <a href="https://eci.gov.in/faqs/" target="_blank" rel="noopener noreferrer" className="footer-link">
+          FAQs
+        </a>
+      </div>
+      <p className="footer-text">© 2024 Election Management System</p>
+    </footer>
     </div>
   );
 };
