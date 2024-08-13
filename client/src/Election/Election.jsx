@@ -26,7 +26,7 @@ const Election = () => {
             <p>Date: {election.date}</p>
             <p>Number of Candidates: {election.candidates}</p>
             <p>State: {election.state}</p>
-            <button onClick={handle} className='button'>Vote</button>
+            <button onClick={handle} className='button'>View details</button>
           </div>
         ))}
       </div>

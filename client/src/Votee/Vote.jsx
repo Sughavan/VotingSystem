@@ -12,15 +12,16 @@ const VotingPage = () => {
   useEffect(() => {
     const fetchCandidates = async () => {
       try {
-        const response = await axios.get('https://retoolapi.dev/w5ywqM/data');
+        const response = await axios.get('http://localhost:3000/api/vote'); // This should now match your backend route
         setCandidates(response.data);
       } catch (error) {
         console.error('Error fetching the candidates data', error);
       }
     };
-
+  
     fetchCandidates();
   }, []);
+  
 
   useEffect(() => {
     const voteStatus = localStorage.getItem(`voted-${voterDetails.voterId}`);
@@ -61,13 +62,13 @@ const VotingPage = () => {
               type="radio" 
               id={candidate.id} 
               name="candidate" 
-              value={candidate.CandidateName} 
+              value={candidate.name} 
               onChange={handleVoteChange} 
               disabled={voteConfirmed}
             />
             <label htmlFor={candidate.id}>
               <img src={candidate.symbol} alt="" className="party-symbol" />
-              {candidate.CandidateName}
+              {candidate.name}
             </label>
           </div>
         ))}

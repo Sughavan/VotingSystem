@@ -12,7 +12,7 @@ const Land = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/details');
+    navigate('/Election');
   };
   const handleelectionk = () => {
     navigate('/Election');

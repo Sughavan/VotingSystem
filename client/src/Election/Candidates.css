@@ -1,4 +1,4 @@
-/* Container for the entire component */
+
 .container {
     display: flex;
     flex-direction: column;
@@ -9,7 +9,7 @@
     /* font-family: 'Arial, sans-serif'; */
   }
   
-  /* Header styling */
+
   .container h1 {
     margin-bottom: 20px;
     font-size: 2em;
@@ -32,7 +32,7 @@
     border-left: 5px solid #1e90ff;
   }
   
-  /* Hover effect for the candidate card */
+ 
   .candidates:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -66,13 +66,13 @@
     transition: background-color 0.3s, transform 0.3s;
   }
   
-  /* Hover and focus effect for the button */
+ 
   button:hover, button:focus {
     background-color: #ff6347;
     transform: translateY(-5px);
   }
   
-  /* Responsive design for smaller screens */
+ 
   @media (max-width: 600px) {
     .candidates {
       width: 90%;

@@ -20,14 +20,16 @@
 }
 
 .voting-section {
+ 
   flex: 2;
   background-color: #f1f8e9;
 }
 
 .candidate-option {
   margin: 10px 0;
-  color: #00796b; 
-}
+  color: #00473f;
+  display: flex; 
+  }
 
 .vote-button {
   margin-top: 20px;
@@ -53,4 +55,15 @@
   margin-top: 20px;
   font-weight: bold;
   color: #324954; 
+}
+.party-symbol
+{
+  width:75px;
+  border-radius: 15px;
+}
+.cand-id 
+{
+  display: flex;
+
+  
 }

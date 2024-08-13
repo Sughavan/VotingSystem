@@ -6,7 +6,8 @@
 
 .slider {
     display: flex;
-    transition: transform 0.5s ease-in-out infinite alternate-reverse;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
 }
 
 .slide {
@@ -19,7 +20,6 @@
     height: 80vh;
     display: block;
     object-fit: cover;
-    background-size: cover
 }
 
 @media (max-width: 768px) {

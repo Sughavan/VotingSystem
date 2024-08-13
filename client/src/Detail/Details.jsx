@@ -15,15 +15,37 @@ const Details = () => {
   });
 
   const [isFormValid, setIsFormValid] = useState(false);
+  const [age, setAge] = useState(null);
+  const [showPopup, setShowPopup] = useState(false);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Check if all fields except middleName are non-empty
+  
     const isValid = Object.keys(formData).every(key => 
       key === 'middleName' || formData[key].trim() !== ''
     );
-    setIsFormValid(isValid);
+
+ 
+    if (formData.dob) {
+      const birthDate = new Date(formData.dob);
+      const today = new Date();
+      let calculatedAge = today.getFullYear() - birthDate.getFullYear();
+      const monthDifference = today.getMonth() - birthDate.getMonth();
+
+      if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+        calculatedAge--;
+      }
+
+      setAge(calculatedAge);
+      if (calculatedAge >= 18) {
+        setIsFormValid(isValid);
+      } else {
+        setIsFormValid(false);
+      }
+    } else {
+      setIsFormValid(false);
+    }
   }, [formData]);
 
   const handleChange = (e) => {
@@ -32,8 +54,10 @@ const Details = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (isFormValid) {
+    if (age >= 18) {
       navigate('/Vote', { state: formData });
+    } else {
+      setShowPopup(true);
     }
   };
 
@@ -80,6 +104,12 @@ const Details = () => {
 
         <button type='submit' className='button' disabled={!isFormValid}>Submit</button>
       </form>
+      {showPopup && (
+        <div className="popup">
+          <p>You are not allowed to vote as you are under 18 years old.</p>
+          <button onClick={() => setShowPopup(false)}>Close</button>
+        </div>
+      )}
     </div>
   );
 };

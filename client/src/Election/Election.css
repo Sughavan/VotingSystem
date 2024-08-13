@@ -1,74 +1,122 @@
-/* Container styles */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   padding: 20px;
-  background-color: #f4f4f9;
+  background: linear-gradient(135deg, #ececec 0%, #ffffff 100%);
   min-height: 100vh;
+  animation: fadeIn 1s ease-in;
 }
 
-/* Header styles */
 .header {
-  font-size: 2.5em;
-  color: #333;
-  margin-bottom: 30px;
+  font-size: 3em;
+  color: #444;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
   cursor: pointer;
+  transition: color 0.3s;
 }
 
-/* Flex container for the election boxes */
+.header:hover {
+  color: #ff6347;
+}
+
 .cont {
-align-items: center;
-flex-direction: column;
-  /* flex-wrap: wrap; */
-  /* justify-content: center; */
-
-  gap: 20px ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
-/* Election box styles */
+
 .cont1 {
   width: 500px;
   height: fit-content;
-  background-color: #1e90ff;
+  background: linear-gradient(135deg, #1e90ff 0%, #00bfff 100%);
   color: white;
   padding: 20px;
   box-sizing: border-box;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-   margin: 20px 20px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  opacity: 0;
+  animation: slideIn 0.8s forwards;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+.cont1:nth-child(odd) {
+  background: linear-gradient(135deg, #ff6347 0%, #ff4500 100%);
 }
 
 .cont1:hover {
-  transform: translateY(-10px);
+  transform: translateY(-10px) scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .cont1 h2 {
-  margin-bottom: 10px;
-  font-size: 1.5em;
+  margin-bottom: 15px;
+  font-size: 1.8em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .cont1 p {
-  margin: 5px 0;
-  font-size: 1em;
+  margin: 8px 0;
+  font-size: 1.1em;
 }
 
+
 .button {
-  margin-top: 30px;
-  padding: 10px 20px;
+  margin-top: 20px;
+  padding: 12px 25px;
   font-size: 1.2em;
   color: white;
-  background-color: #4caf50;
+  background-color: #32cd32;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 .button:hover {
-  background-color: #45a049;
-  transform: translateY(3px);
+  background-color: #2e8b57;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .cont1 {
+    width: 100%;
+  }
+
+  .header {
+    font-size: 2em;
+  }
+
+  .button {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
 }

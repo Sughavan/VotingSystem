@@ -10,7 +10,7 @@ const Candidates = () => {
   useEffect(() => {
     const fetchCandidates = async () => {
       try {
-        const response = await axios.get('https://retoolapi.dev/w5ywqM/data');
+        const response = await axios.get('http://localhost:3000/api/vote');
         setCandidates(response.data);
       } catch (error) {
         console.error('Error fetching the data', error);
@@ -28,16 +28,17 @@ const Candidates = () => {
     <div className="container">
       <h1>Candidates List</h1>
       {candidates.map((candidate, index) => (
-        <div key={index} className='candidates'>
-          <h2 className='nam'>{candidate.id}  {candidate.CandidateName}</h2>
-          <p className='detail'>Party: {candidate.party}</p>
-          <p className='detail'>Age: {candidate.age}</p>
-          <p className='detail'>State: {candidate.state}</p>
+        <div key={index} className="candidates">
+          <h2 className="nam">{candidate.id}  {candidate.name}</h2>
+          <p className="detail">Party: {candidate.party}</p>
+          <p className="detail">Age: {candidate.age}</p>
+          <p className="detail">State: {candidate.state}</p>
+          <img src={candidate.symbol} alt={"cand"} className="symbol" />
         </div>
       ))}
-      <button className='buttonvote' onClick={handleVoteClick}>Vote</button>
+      <button className="buttonvote" onClick={handleVoteClick}>Vote</button>
     </div>
   );
-}
+};
 
 export default Candidates;
